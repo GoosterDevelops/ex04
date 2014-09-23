@@ -19,14 +19,12 @@ void main() {
     
     /* RECTANGLE + LINE EXERCISE */
     
-    int x = 400;
-    int y = 300;
-   
-    String newCoordinates = lineCoordinates(x, y);
-    
     print('RECTANGLE + LINE EXERCISE');
     print('the final coordinates are ');
-    print('${newCoordinates}');
+    
+    int width = 800;
+    int height = 600;
+    print("${lineCoordinates(width, height)} \n");
     
     /* END RECTANGLE + LINE EXERCISE */
     
@@ -84,18 +82,17 @@ String fibonacciIteration(int t) {
 
 
 
-String lineCoordinates(int x, int y){
-  
-  int lineLenght = 160;
-  // pythagores formula: h^2 = c1^2 + c2^2
-  var c2 = (lineLenght * lineLenght)/2;
-  var c = math.sqrt(c2);
-  String newX = (x+c).toString();
-  String newY = (y-c).toString();
-  
-  String xyCoordinates = 'x = $newX , y = $newY';
-  return xyCoordinates;
-}
+
+String lineCoordinates(int width, int height){
+ var angle = 45;
+ var hypoth = 160;
+ var radiant = angle * (math.PI / 180);
+ var xFin = width/2 + hypoth*math.cos(radiant);
+ var yFin = height/2 + hypoth*math.sin(radiant);
+ String Coordinates = 'Beginning: (${(width/2).toStringAsFixed(2)}, ${(height/2).toStringAsFixed(2)}) \n'
+ 'End: (${xFin.toStringAsFixed(2)}, ${yFin.toStringAsFixed(2)})';
+ return Coordinates;
+ }
 
 
 
